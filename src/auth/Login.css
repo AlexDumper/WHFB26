@@ -1,0 +1,81 @@
+/* Login Page Styles */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.login-card {
+  max-width: 480px;
+  width: 100%;
+  border-radius: 16px !important;
+  border: none !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+.login-icon svg {
+  filter: drop-shadow(0 4px 8px rgba(252, 63, 29, 0.3));
+}
+
+.login-title {
+  font-weight: 700;
+  color: #1a1a2e;
+  font-size: 1.75rem;
+}
+
+.login-subtitle {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.yandex-login-btn {
+  background: linear-gradient(135deg, #fc3f1d 0%, #e8341c 100%) !important;
+  border: none !important;
+  padding: 14px 32px !important;
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(252, 63, 29, 0.3) !important;
+}
+
+.yandex-login-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(252, 63, 29, 0.4) !important;
+  background: linear-gradient(135deg, #e8341c 0%, #d32f19 100%) !important;
+}
+
+.yandex-login-btn:active {
+  transform: translateY(0) !important;
+}
+
+.login-info {
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Адаптивность */
+@media (max-width: 576px) {
+  .login-card {
+    padding: 20px !important;
+  }
+  
+  .login-title {
+    font-size: 1.5rem;
+  }
+  
+  .login-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .yandex-login-btn {
+    width: 100%;
+    padding: 12px 24px !important;
+    font-size: 1rem !important;
+  }
+}

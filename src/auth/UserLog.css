@@ -1,0 +1,14 @@
+/* UserLog Styles */
+.filter-badge {
+  transition: all 0.2s ease;
+  padding: 0.5em 0.8em;
+  font-size: 0.9rem;
+}
+
+.filter-badge:hover {
+  transform: scale(1.05);
+}
+
+.table td {
+  vertical-align: middle;
+}
