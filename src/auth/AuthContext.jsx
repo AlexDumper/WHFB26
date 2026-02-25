@@ -3,7 +3,7 @@ import { createContext, useContext, useState, useEffect } from 'react'
 const AuthContext = createContext(null)
 
 // Конфигурация Яндекс OAuth
-const YANDEX_CLIENT_ID = '2d3a952e9dce4ab9bfdde5d84ab8d05a'
+const YANDEX_CLIENT_ID = '6534e5973fd54c3b8079de2119e111a9'
 const SCOPE = 'login:info login:email'
 
 // Redirect URI - используем Vercel для продакшена
