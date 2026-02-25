@@ -6,11 +6,9 @@ const AuthContext = createContext(null)
 const YANDEX_CLIENT_ID = '2d3a952e9dce4ab9bfdde5d84ab8d05a'
 const SCOPE = 'login:info login:email'
 
-// Динамический redirect URI (работает и на localhost, и на Vercel)
-const getRedirectUri = () => {
-  const baseUrl = window.location.origin
-  return `${baseUrl}/callback`
-}
+// Redirect URI - используем Vercel для продакшена
+const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI || 
+                     (typeof window !== 'undefined' ? window.location.origin + '/callback' : 'http://localhost:5173/callback')
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
@@ -103,8 +101,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = () => {
     // force_confirm=1 заставляет Яндекс всегда показывать окно авторизации
-    const redirectUri = getRedirectUri()
-    const authUrl = `https://oauth.yandex.ru/authorize?response_type=token&client_id=${YANDEX_CLIENT_ID}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(SCOPE)}&force_confirm=1`
+    const authUrl = `https://oauth.yandex.ru/authorize?response_type=token&client_id=${YANDEX_CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&scope=${encodeURIComponent(SCOPE)}&force_confirm=1`
     window.location.href = authUrl
   }
 
