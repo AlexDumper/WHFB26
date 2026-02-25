@@ -3,8 +3,8 @@ import './Login.css'
 
 export const Login = () => {
   const handleYandexLogin = () => {
-    const YANDEX_CLIENT_ID = '2d3a952e9dce4ab9bfdde5d84ab8d05a'
-    const REDIRECT_URI = 'http://localhost:5173/callback'
+    const YANDEX_CLIENT_ID = '6534e5973fd54c3b8079de2119e111a9'
+    const REDIRECT_URI = window.location.origin + '/callback'
     const SCOPE = 'login:info login:email'
 
     // force_confirm=1 заставляет Яндекс всегда показывать окно авторизации
